@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 
@@ -20,7 +21,7 @@ public class Product {
 	int stock;
 	@Column(nullable = false)
 	float price;
-	@Column(nullable = false)
+	@ManyToOne
 	Category pro_Category;
 	public String getPro_Name() {
 		return pro_Name;
