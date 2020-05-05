@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 
 public class Product {
@@ -14,12 +17,16 @@ public class Product {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	int pro_Id;
 	@Column(nullable = false, unique = true)
+	@Length(min=3,message ="The minimum no.of character is 3")
 	String pro_Name;
 	@Column(nullable = false,columnDefinition="text")
+
 	String description;
 	@Column(nullable = false)
+	
 	int stock;
 	@Column(nullable = false)
+	
 	float price;
 	@ManyToOne
 	Category pro_Category;
