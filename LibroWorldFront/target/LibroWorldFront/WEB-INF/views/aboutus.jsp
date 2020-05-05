@@ -15,8 +15,7 @@
           margin-left:10%;
           margin-right: 10%;
           text-align:justify;
-        }
-     
+ }
        h2{
            text-align: center;
        }
@@ -28,7 +27,8 @@
         <div class="jumbotron" style="margin-top: 2%;">
          <CENTER>  <h1> "BEST PLACE FOR BOOK LOVERS"</h1></CENTER>
 
-        <img class=bg src="img/ba7.jpg" alt="book" style="width:80%;height:10%;margin-right:10%;margin-left: 10%;">
+           <img class=bg src="img/ba71.jpg" alt="book" style="width:80%;height:30%;margin-right:10%;margin-left: 10%;">
+
         
         <h3 style="margin-top:3%;">
          <CENTER>WHO WE ARE?</CENTER> 

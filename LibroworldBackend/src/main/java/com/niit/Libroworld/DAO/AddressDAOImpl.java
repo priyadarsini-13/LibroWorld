@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.niit.Libroworld.Model.Address;
 import com.niit.Libroworld.Model.Customer;
 
-@Repository("categorydao")
+@Repository("addressdao")
 @Transactional
 public class AddressDAOImpl implements IAddressDAO {
 	@Autowired

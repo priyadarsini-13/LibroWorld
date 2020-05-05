@@ -40,10 +40,15 @@
 		<c:if test="${registerpage}">
 			<jsp:include page="register.jsp"></jsp:include>
 		</c:if>
+		<c:if test="${productpage}">
+			<jsp:include page="product.jsp"></jsp:include>
+		</c:if>
 		<c:if test="${categorypage}">
 			<jsp:include page="category.jsp"></jsp:include>
 		</c:if>
+	
+		
 	</div>
-<%-- 	<jsp:include page="footer.jsp"></jsp:include> --%>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <STYLE>
-ul li a {
+.ul9 .li9 {
 	margin-right: 20px;
 }
 
@@ -12,10 +12,10 @@ ul li a {
 	list-style-type: none;
 }
 
-.icon {
+.icon4 {
 	padding: 4px;
 	color: rgb(88, 17, 67);
-	text-align: center;
+	
 }
 
 
@@ -26,14 +26,15 @@ ul li a {
 	list-style-type: none;
 }
 
-.ico {
-	color: rgb(167, 15, 121);
-	font-size: xx-large;
+.ico5 {
+	color: rgb(19, 3, 15);
+   
+	font-size: 30px;
 }
 </STYLE>
 
 <nav class="navbar navbar-expand-sm navbar-light navbar-light"
-	style="background-color: rgb(226, 133, 182);">
+	style="background-color: rgb(209, 17, 120);">
 	<a class="navbar-brand" href="HOME.HTML"> <img src="img/logo7.PNG"
 		width="130" height="50" class="d-inline-block align-top"
 		alt="LIBROWORLD">
@@ -47,58 +48,49 @@ ul li a {
 	</button>
 
 	<div class="collapse navbar-collapse" id="navbarToggleExternalContent">
-		<ul class="navbar-nav">
-			<li class="nav-item"><a class="nav-link" href="home">HOME</a></li>
+		<ul class="navbar-nav ">
+			<li class="nav-item "><a class="nav-link" href="home">HOME</a></li>
 
-			<li class="nav-item"><a class="nav-link" href="aboutus">ABOUT
+			<li class="nav-item "><a class="nav-link" href="aboutus">ABOUT
 					US</a></li>
-			<li class="nav-item"><a class="nav-link" href="contactus">CONTACT
+			<li class="nav-item "><a class="nav-link" href="contactus">CONTACT
 					US</a></li>
-
+<li class="nav-item "><a class="nav-link" href="category"> MANAGE CATEGORY
+					</a></li>
+					<li class="nav-item "><a class="nav-link" href="product">MANAGE PRODUCT
+					</a></li>
 		</ul>
-		<div class="dropdown">
-			<button class="btn btn dropdown-toggle" type="button"
-				data-toggle="dropdown">CATOGORIES</button>
-			<ul class="dropdown-menu">
-				<li><a href="#">FICTION</a></li>
-				<li><a href="#">NON-FICTION</a></li>
-				<li><a href="#">FASHION</a></li>
-				<li><a href="#">NOVELS</a></li>
-				<li><a href="#">BIOGRAPHIES</a></li>
-			</ul>
-		</div>
-
+	
 	</div>
 	<div class="search-container">
 		<form>
-			<input type="text" placeholder=" Search" name="search">
+			<input type="text1" placeholder=" Search" name="search">
 			<button type="submit">
-				<i class="fa fa-search icon "></i>
+				<i class="fa fa-search icon4 "></i>
 			</button>
 		</form>
 	</div>
 
 	<div class="footer-social-icons">
-		<ul class=" social">
+		<ul class="ul9 social">
 
-			<li><a href="#" target="blank"><i class="fa fa-google ico "
+			<li class="li9"><a href="#" target="blank"><i class="fa fa-google ico5 "
 					aria-hidden="true"></i></a></li>
-			<li><a href="#" target="blank"><i class="fa fa-facebook ico"
+			<li class="li9"><a href="#" target="blank"><i class="fa fa-facebook ico5"
 					aria-hidden="true"></i></a></li>
-			<li><a href="#" target="blank"><i
-					class="fa fa-instagram ico " aria-hidden="true"></i></a></li>
-			<li><a href="#" target="blank"><i class="fa fa-twitter ico "
-					aria-hidden="true"></i></a></li>
+			<li class="li9"><a href="#" target="blank"><i
+					class="fa fa-instagram ico5 " aria-hidden="true"></i></a></li>
+			
 		</ul>
 
 	</div>
 	<div class="collapse navbar-collapse"
 		id="navbarToggleExternalContent a">
 		<ul class="navbar-nav ">
-			<li class="nav-item"><a class="nav-link" href="login">Sign
-					In</a></li>
-			<li class="nav-item"><a class="nav-link" href="register">Sign
-					Up</a></li>
+			<li class="nav-item"><a class="nav-link" href="login">SIGN
+					IN</a></li>
+			<li class="nav-item"><a class="nav-link" href="register">SIGN
+					UP</a></li>
 		</ul>
 	</div>
 

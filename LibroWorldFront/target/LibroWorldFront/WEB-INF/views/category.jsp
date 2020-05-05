@@ -35,32 +35,77 @@ input[type=text] {
 hr.new1 {
 	border-top: 2px solid rgb(88, 17, 67);
 }
+
+table {
+	width: 100%;
+}
 </style>
 <c:if test="${info}">
-				<div class ="alert" role="alert">
-				<h3>${message}</h3>
-				</div>
-			</c:if>
+	<div class="alert" role="alert">
+		<h3>${message}</h3>
+	</div>
+</c:if>
+
 <div class="jumbotron">
 	<div class="col-12" style="margin-top: 1%">
 		<h2 class="text-center">Add Your Category Here.</h2>
 		<div>
-		
+
 			<hr class="new1">
-			
-			<form:form action="addcategory" method="post"
+			<c:if test="${edit}">
+				<c:set var="url" value="updatecategory"></c:set>
+			</c:if>
+			<c:if test="${!edit}">
+				<c:set var="url" value="addcategory"></c:set>
+			</c:if>
+			<form:form action="${url}" method="post"
 				modelAttribute="categoryobject">
+				<c:if test="${edit}">
+					<form:hidden id="inputEmail" class="form-control"
+						placeholder="category " path="cat_Id" />
+
+				</c:if>
 				<div class="form-label-group">
 					<label for="inputEmail"></label>
 					<form:input type="text" id="inputEmail" class="form-control"
 						placeholder="category " path="cat_Name" />
+					<form:errors path="cat_Name" cssStyle="color:Red"></form:errors>
 				</div>
+				<button
+					class="btn1 btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+					type="submit">Submit</button>
+			</form:form>
 		</div>
-		<button
-			class="btn1 btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
-			type="submit">Submit</button>
-		</form:form>
-	</div>
 
-</div>
+	</div>
+	<hr class="new1">
+	<div class="col-10">
+
+		<table>
+			<tr>
+				<th>Category Id</th>
+				<th>Category Name</th>
+				<th>Edit/Delete</th>
+			</tr>
+			<c:forEach var="c" items="${categorylist}">
+				<tr>
+					<td>${c.cat_Id}</td>
+					<td>${c.cat_Name}</td>
+					<td>
+						<div class="row">
+							<div class="col-6">
+								<a href="deletecategory?catname=${c.cat_Name}"
+									class="btn btn-danger">Delete</a>
+							</div>
+							<div class="col-6">
+								<a href="getdatatoedit?catname=${c.cat_Name}"
+									class="btn btn-success">Edit</a>
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</c:forEach>
+		</table>
+	</div>
 </div>

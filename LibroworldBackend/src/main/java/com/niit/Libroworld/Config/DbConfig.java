@@ -21,7 +21,7 @@ public class DbConfig {
 	public BasicDataSource myDataSource() {
 		BasicDataSource basicDataSource = new BasicDataSource();
 		basicDataSource.setDriverClassName("org.h2.Driver");
-		basicDataSource.setUrl("jdbc:h2:tcp://localhost/~/libroworld");
+		basicDataSource.setUrl("jdbc:h2:~/libroworld");
 		basicDataSource.setUsername("sa");
 		basicDataSource.setPassword("password");
 		return basicDataSource;
@@ -36,7 +36,7 @@ public class DbConfig {
 	}
 
 	@Bean(name = "sessionfactory")
-	SessionFactory mySessionFactory() {
+	LocalSessionFactoryBean mySessionFactory() {
 		LocalSessionFactoryBean localSessionFactoryBean = new LocalSessionFactoryBean();
 		localSessionFactoryBean.setDataSource(myDataSource());
 		localSessionFactoryBean.setHibernateProperties(myDBProperties());
@@ -46,7 +46,7 @@ public class DbConfig {
 		// now i have to say which classes should i uses to create tables
 		localSessionFactoryBean.setPackagesToScan("com.niit.Libroworld.Model");
 
-		return (SessionFactory) localSessionFactoryBean;
+		return  localSessionFactoryBean;
 	}
 
 	@Autowired

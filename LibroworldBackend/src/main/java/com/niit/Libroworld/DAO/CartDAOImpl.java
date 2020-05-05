@@ -13,7 +13,7 @@ import com.niit.Libroworld.Model.Cart;
 import com.niit.Libroworld.Model.Category;
 import com.niit.Libroworld.Model.Customer;
 
-@Repository("categorydao")
+@Repository("cartdao")
 @Transactional
 
 public class CartDAOImpl implements ICartDAO {

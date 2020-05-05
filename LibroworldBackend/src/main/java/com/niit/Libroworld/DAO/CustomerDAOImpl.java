@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.Libroworld.Model.Category;
 import com.niit.Libroworld.Model.Customer;
-@Repository("categorydao")
+@Repository("customerdao")
 @Transactional
 public class CustomerDAOImpl implements ICustomerDAO {
 	@Autowired
