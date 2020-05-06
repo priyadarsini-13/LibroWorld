@@ -1,19 +1,20 @@
 
 <style>
-.container {
-	margin-top: 1%;
+.jumbotron {
+	margin-top:1%;
 	border: 2px solid rgb(88, 17, 67);
 	background-color: rgba(206, 193, 201, 0.5);
-	margin-bottom: 2%;
-	padding: 1%;
+	margin-bottom:1%;
+	margin-left:35%;
+
 	width: 30%;
 	height: 75%;
 }
 
 .form-label-group {
 	display: flex;
-	width: 100%;
-	margin-top: 12%;
+	
+	margin-top: 7%;
 }
 
 .icon1 {
@@ -79,8 +80,8 @@ hr.new1 {
 </style>
 <body>
 
-	<div class="container">
-		<div class="col-12" style="margin-top: 5%">
+	<div class="jumbotron">
+		<div class="col-12">
 			<h2 class="text-center">
 				Sign in<i class="fa fa-pencil fa-lg" id="pencil"></i>
 			</h2>

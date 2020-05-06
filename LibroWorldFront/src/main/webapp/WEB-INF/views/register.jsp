@@ -7,13 +7,13 @@ body {
 	
 }
 
-.container {
+.jumbotron{
 	margin-top:2%;
 	border: 2px solid rgb(88, 17, 67);
 	background-color: rgba(206, 193, 201, 0.5);
-	margin-bottom: 5%;
-	width: 27%;
-	height: 95%;
+	margin-left: 35%;
+	width: 30%;
+	height: 80%;
 }
 
 div {
@@ -22,7 +22,7 @@ div {
 
 .btn3 {
 	background-color:rgb(88, 17, 67);
-	margin-top:3%;
+	margin-top:6%;
 	}
 
 input[type=text] {
@@ -58,17 +58,17 @@ input[type=text] {
 				<h3>${message}</h3>
 				</div>
 			</c:if>
-	<div class="container">
+	<div class="jumbotron">
 
 
-		<div class="col-12" style="margin-top: 0.5%">
+		<div class="col-12" >
 
-			<h4 class="text-center">
+			<h3 class="text-center">
 				Sign up now<i class="fa fa-user-circle  fa-lg" id=" user"></i>
-			</h4>
+			</h3>
 			<CENTER>
 
-				<p>Stay connected!</p>
+				<h6>Stay connected!</h6>
 
 			</CENTER>
 			<div>
@@ -111,7 +111,7 @@ input[type=text] {
 					
 					<div class="id" style="text-align: right">
 						<center>
-							<a class="small " style="color: black" href="#"> Have already
+							<a style="color: black" href="login"> Have already
 								an account? Login here! </a>
 						</center>
 					</div>
