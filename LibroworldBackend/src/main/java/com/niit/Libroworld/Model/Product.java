@@ -6,9 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
+
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 
@@ -30,6 +32,15 @@ public class Product {
 	float price;
 	@ManyToOne
 	Category pro_Category;
+	@Transient
+	MultipartFile product_Images;
+
+	public MultipartFile getProduct_Images() {
+		return product_Images;
+	}
+	public void setProduct_Images(MultipartFile product_Images) {
+		this.product_Images = product_Images;
+	}
 	public String getPro_Name() {
 		return pro_Name;
 	}
