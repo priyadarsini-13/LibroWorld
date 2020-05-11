@@ -51,9 +51,8 @@ hr.new1 {
 	border-top: 2px solid rgb(88, 17, 67);
 }
 table {
-	width: 90%;
-	margin-left:5%;
-	margin-right:5%;
+	width: 100%;
+	
 	
 }
 </style>

@@ -1,12 +1,18 @@
 package com.niit.LibroWorldFront.Controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller; 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.niit.Libroworld.DAO.IProductDAO;
+
 
 @Controller
 public class HomeController {
-	 
+	@Autowired
+	IProductDAO productdao;
 	  @RequestMapping(value={"/","/home"})
 		String IndexPage(Model model) {
 			
@@ -40,8 +46,19 @@ public class HomeController {
 			model.addAttribute("title","Login");
 			return "index";
 		}
-		
-
-		
+		@RequestMapping("/allproducts")
+		String DisplayData(Model model)
+		{
+			model.addAttribute("productlist",productdao.allProduct());
+			model.addAttribute("cust_productpage",true);
+			return "index";
+		}
+		@RequestMapping("/oneproduct")
+		String viewProductDetails(@RequestParam("prodid") int prodid,Model model)
+		{
+			model.addAttribute("product",productdao.oneProduct(prodid));
+			model.addAttribute("oneproductpage",true);
+			return "index";
+		}
 		
 	}

@@ -1,6 +1,7 @@
 <STYLE>
 .ul9 .li9 {
 	margin-right: 20px;
+	
 }
 
 .social {
@@ -17,15 +18,16 @@
 	color: rgb(88, 17, 67);
 	
 }
-
-.navbar-brand{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
+.nav-link{
+color:white;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size:15px;
 }
+
 
 .social {
 	padding-top: 5px;
-	font-size: 100%;
+	font-size: 80%;
 	list-style-type: none;
 }
 
@@ -35,9 +37,11 @@
 	font-size: 30px;
 }
 </STYLE>
+<body>
+
 
 <nav class="navbar navbar-expand-sm navbar-light navbar-light"
-	style="background-color: rgb(209, 17, 120);">
+	style="background-color: rgba(224, 0, 86, 0.829);">
 	<a class="navbar-brand" href="HOME.HTML"> <img src="img/logo7.PNG"
 		width="130" height="50" class="d-inline-block align-top"
 		alt="LIBROWORLD">
@@ -58,6 +62,8 @@
 					US</a></li>
 			<li class="nav-item "><a class="nav-link" href="contactus">CONTACT
 					US</a></li>
+					<li class="nav-item "><a class="nav-link" href="allproducts"> PRODUCT
+					</a></li>
 <li class="nav-item "><a class="nav-link" href="category"> MANAGE CATEGORY
 					</a></li>
 					<li class="nav-item "><a class="nav-link" href="product">MANAGE PRODUCT
@@ -99,3 +105,4 @@
 
 
 </nav>
+</body>

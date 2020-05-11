@@ -1,7 +1,7 @@
  <style>
     .footer
     {
-        background:rgb(209, 17, 120);
+        background:rgba(224, 0, 86, 0.829);
     }
      .myul
     {
