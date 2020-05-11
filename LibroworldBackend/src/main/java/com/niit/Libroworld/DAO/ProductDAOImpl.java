@@ -65,10 +65,10 @@ public class ProductDAOImpl implements IProductDAO {
 	}
 
 	@Override
-	public Product oneProduct(int prod_id) {
+	public Product oneProduct(int prodid) {
 		try {
 			Product product = (Product) sessionfactory.getCurrentSession().createCriteria(Product.class)
-					.add(Restrictions.eq("pro_Id", prod_id)).uniqueResult();
+					.add(Restrictions.eq("pro_Id", prodid)).uniqueResult();
 			return product;
 		} catch (Exception e) {
 			return null;
