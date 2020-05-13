@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cr" value="${pageContext.request.contextPath}" />
+
 <STYLE>
 .ul9 .li9 {
 	margin-right: 20px;
@@ -42,7 +45,7 @@ font-size:15px;
 
 <nav class="navbar navbar-expand-sm navbar-light navbar-light"
 	style="background-color: rgba(224, 0, 86, 0.829);">
-	<a class="navbar-brand" href="HOME.HTML"> <img src="img/logo7.PNG"
+	<a class="navbar-brand" href="HOME.HTML"> <img src="${cr }/img/logo7.PNG"
 		width="130" height="50" class="d-inline-block align-top"
 		alt="LIBROWORLD">
 
@@ -55,25 +58,58 @@ font-size:15px;
 	</button>
 
 	<div class="collapse navbar-collapse" id="navbarToggleExternalContent">
-		<ul class="navbar-nav ">
-			<li class="nav-item "><a class="nav-link" href="home">HOME</a></li>
-
-			<li class="nav-item "><a class="nav-link" href="aboutus">ABOUT
-					US</a></li>
-			<li class="nav-item "><a class="nav-link" href="contactus">CONTACT
-					US</a></li>
-					<li class="nav-item "><a class="nav-link" href="allproducts"> PRODUCT
-					</a></li>
-<li class="nav-item "><a class="nav-link" href="category"> MANAGE CATEGORY
-					</a></li>
-					<li class="nav-item "><a class="nav-link" href="product">MANAGE PRODUCT
-					</a></li>
-		</ul>
+	<ul class="navbar-nav ">
+	<c:choose>
+	<c:when test="${adminrole}">
 	
+		
+			<li class="nav-item "><a class="nav-link" href="${cr }/home">HOME</a></li>
+
+			<li class="nav-item "><a class="nav-link" href="${cr }/aboutus">ABOUT
+					US</a></li>
+			<li class="nav-item "><a class="nav-link" href="${cr }/contactus">CONTACT
+					US</a></li>
+<li class="nav-item "><a class="nav-link" href="${cr }/admin/category"> MANAGE CATEGORY
+					</a></li>
+					<li class="nav-item "><a class="nav-link" href="${cr }/admin/product">MANAGE PRODUCT
+					</a></li>
+					<li class="nav-item "><a class="nav-link" href="${cr }/logout">LOGOUT
+					</a></li>
+					</c:when>
+					
+					
+					
+					
+					
+					<c:when test="${userrole}">
+						</c:when>
+				<c:otherwise>
+					
+					
+					<li class="nav-item "><a class="nav-link" href="${cr }/home">HOME</a></li>
+
+			<li class="nav-item "><a class="nav-link" href="${cr }/aboutus">ABOUT
+					US</a></li>
+			<li class="nav-item "><a class="nav-link" href="${cr }/contactus">CONTACT
+					US</a></li>
+					<li class="nav-item "><a class="nav-link" href="${cr }/allproducts"> PRODUCT
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="${cr }/login">SIGN
+					IN</a></li>
+			<li class="nav-item"><a class="nav-link" href="${cr }/register">SIGN
+					UP</a></li>
+					</c:otherwise>
+					</c:choose>
+					</ul>
+					
+		
 	</div>
-	<div class="search-container">
+					
+					
+		
+						<div class="search-container">
 		<form>
-			<input type="text1" placeholder=" Search" name="search">
+			<input type="text" placeholder=" Search" name="search">
 			<button type="submit">
 				<i class="fa fa-search icon4 "></i>
 			</button>
@@ -93,15 +129,9 @@ font-size:15px;
 		</ul>
 
 	</div>
-	<div class="collapse navbar-collapse"
-		id="navbarToggleExternalContent a">
-		<ul class="navbar-nav ">
-			<li class="nav-item"><a class="nav-link" href="login">SIGN
-					IN</a></li>
-			<li class="nav-item"><a class="nav-link" href="register">SIGN
-					UP</a></li>
-		</ul>
-	</div>
+	
+	
+	
 
 
 </nav>

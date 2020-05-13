@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.niit.Libroworld.DAO.ICategoryDAO;
 import com.niit.Libroworld.Model.Category;
 
+@RequestMapping("/admin")
 @Controller
 public class CategoryController {
 	@Autowired

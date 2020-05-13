@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<c:set var="cr" value="${pageContext.request.contextPath}" />
+
 <style>
 .jumbotron {
 	margin-top: 5%;
@@ -75,10 +77,10 @@ table {
 			<div>
 				<hr class="new1">
 <c:if test="${edit}">
-				<c:set var="url" value="updateproduct"></c:set>
+				<c:set var="url" value="${cr }/admin/updateproduct"></c:set>
 			</c:if>
 			<c:if test="${!edit}">
-				<c:set var="url" value="addproduct"></c:set>
+				<c:set var="url" value="${cr }/admin/addproduct"></c:set>
 			</c:if>
 				<form:form action="${url}" method="post"
 				modelAttribute="productobject" enctype="multipart/form-data">
@@ -155,15 +157,15 @@ table {
 					<td>${c.stock}</td>
 					<td>${c.price}</td>
 					<td>${c.pro_Category.cat_Name}</td>
-					<td><img src="pimg/${c.pro_Id}.jpeg" height="50px"></td>
+					<td><img src="${cr }/pimg/${c.pro_Id}.jpeg" height="50px"></td>
 					<td>
 						<div class="row">
 							<div class="col-6">
-								<a href="deleteproduct?prodid=${c.pro_Id}"
+								<a href="${cr }/admin/deleteproduct?prodid=${c.pro_Id}"
 									class="btn btn-danger">Delete</a>
 							</div>
 							<div class="col-6">
-								<a href="getproducttoedit?prodid=${c.pro_Id}"
+								<a href="${cr }/admin/getproducttoedit?prodid=${c.pro_Id}"
 									class="btn btn-success">Edit</a>
 							</div>
 						</div>

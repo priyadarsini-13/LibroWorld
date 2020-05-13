@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<c:set var="cr" value="${pageContext.request.contextPath}" />
+
 <style>
 .jumbotron {
 	margin-top: 5%;
@@ -56,10 +58,10 @@ table {
 
 			<hr class="new1">
 			<c:if test="${edit}">
-				<c:set var="url" value="updatecategory"></c:set>
+				<c:set var="url" value="${cr }/admin/updatecategory"></c:set>
 			</c:if>
 			<c:if test="${!edit}">
-				<c:set var="url" value="addcategory"></c:set>
+				<c:set var="url" value="${cr }/admin/addcategory"></c:set>
 			</c:if>
 			<form:form action="${url}" method="post"
 				modelAttribute="categoryobject">
@@ -99,11 +101,11 @@ table {
 					<td>
 						<div class="row">
 							<div class="col-6">
-								<a href="deletecategory?catname=${c.cat_Name}"
+								<a href="${cr }/admin/deletecategory?catname=${c.cat_Name}"
 									class="btn btn-danger">Delete</a>
 							</div>
 							<div class="col-6">
-								<a href="getdatatoedit?catname=${c.cat_Name}"
+								<a href="${cr }/admin/getdatatoedit?catname=${c.cat_Name}"
 									class="btn btn-success">Edit</a>
 							</div>
 						</div>

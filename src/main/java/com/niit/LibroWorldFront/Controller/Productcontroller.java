@@ -20,6 +20,7 @@ import com.niit.Libroworld.DAO.ICategoryDAO;
 import com.niit.Libroworld.DAO.IProductDAO;
 import com.niit.Libroworld.Model.Product;
 
+@RequestMapping("/admin")
 @Controller
 public class Productcontroller {
 	@Autowired

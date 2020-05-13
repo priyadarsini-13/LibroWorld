@@ -39,13 +39,7 @@ public class HomeController {
 		}
 		
 
-		@RequestMapping("/login")
-		String loginPage(Model model)
-		{
-			model.addAttribute("loginpage",true);
-			model.addAttribute("title","Login");
-			return "index";
-		}
+		
 		@RequestMapping("/allproducts")
 		String DisplayData(Model model)
 		{

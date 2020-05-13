@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <style>
 .jumbotron {
 	margin-top:1%;
@@ -79,6 +79,11 @@ hr.new1 {
 }
 </style>
 <body>
+<c:if test="${info}">
+				<div class ="alert" role="alert">
+				<h3>${message}</h3>
+				</div>
+				</c:if>
 
 	<div class="jumbotron">
 		<div class="col-12">
@@ -86,18 +91,19 @@ hr.new1 {
 				Sign in<i class="fa fa-pencil fa-lg" id="pencil"></i>
 			</h2>
 			<div>
-				<form>
+			
+				<form action="perform_login" method="post">
 
 					<div class="form-label-group">
-						<label for="inputEmail"></label> <i class="fa fa-user icon1"></i> <input
-							type="text" id="inputEmail" class="form-control"
-							placeholder="Email address" required autofocus>
+						<label for="user_name"></label> <i class="fa fa-user icon1"></i> <input
+							type="text" id="user_name"  name="user_name" class="form-control"
+							placeholder="Name" required autofocus>
 
 					</div>
 
 					<div class="form-label-group">
-						<label for="inputPassword"></label> <i class="fa fa-key icon1"></i>
-						<input type="text" id="inputPassword" class="form-control"
+						<label for="user_password"></label> <i class="fa fa-key icon1"></i>
+						<input type="text" id="user_password" name="user_password" class="form-control"
 							placeholder="Password" required autofocus>
 
 					</div>

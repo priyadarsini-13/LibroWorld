@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cr" value="${pageContext.request.contextPath}" />
 <style>
 .gallery-wrap .img-big-wrap img {
 	height: 400px;
@@ -182,7 +183,7 @@ transform
 				<article class="gallery-wrap">
 					<div class="img-big-wrap">
 						<div>
-							<img src="pimg/${product.pro_Id}.jpeg">
+							<img src="${cr }/pimg/${product.pro_Id}.jpeg">
 						</div>
 					</div>
 				</article>
