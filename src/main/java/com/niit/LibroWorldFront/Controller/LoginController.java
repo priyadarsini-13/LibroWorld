@@ -2,13 +2,19 @@ package com.niit.LibroWorldFront.Controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.niit.Libroworld.DAO.ICustomerDAO;
+import com.niit.Libroworld.Model.Customer;
 @Controller
 public class LoginController {
+	@Autowired
+	ICustomerDAO customerdao;
 	@RequestMapping("/login")
 	String loginPage(@RequestParam(value="error",required=false,defaultValue="false") boolean error, Model model)
 	{
@@ -26,7 +32,8 @@ public class LoginController {
 		return "index";
 	}
 	@RequestMapping("/loginsuccess")
-	String loginSuccess( Model model,HttpSession session) {
+	String loginSuccess( Model model,HttpSession session) 
+	{
 		String userid=SecurityContextHolder.getContext().getAuthentication().getName();
 		String role=SecurityContextHolder.getContext().getAuthentication().getAuthorities().toString();
 		if(role.equals("[ROLE_ADMIN]"))
@@ -36,6 +43,10 @@ public class LoginController {
 		}
 		else
 		{
+			Customer customer=customerdao.selectCustomer(userid);
+			session.setAttribute("username",customer.getCust_Name().toUpperCase());
+			session.setAttribute("adminrole", false);
+			session.setAttribute("userrole", true);
 	}
 		model.addAttribute("indexpage",true);
 		return"index";

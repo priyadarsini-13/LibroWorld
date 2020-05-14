@@ -46,6 +46,12 @@ img {
 input[type=text] {
 	border: 1px solid rgb(88, 17, 67);
 	border-radius: 0%;
+	
+}
+input[type=password]{
+	border: 1px solid rgb(88, 17, 67);
+	border-radius: 0%;
+	
 }
 
 hr.new1 {
@@ -103,7 +109,7 @@ hr.new1 {
 
 					<div class="form-label-group">
 						<label for="user_password"></label> <i class="fa fa-key icon1"></i>
-						<input type="text" id="user_password" name="user_password" class="form-control"
+						<input type="password" id="user_password" name="user_password" class="form-control"
 							placeholder="Password" required autofocus>
 
 					</div>

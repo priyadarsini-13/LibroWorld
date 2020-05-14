@@ -38,24 +38,28 @@ public class RegisterController {
 			}
 			else {
 			if (customerdao.addCustomer(customer)) {
+				model.addAttribute("customerobject", new Customer());
 				model.addAttribute("info", true);
 				model.addAttribute("message", "Added");
 				System.out.println("Done");
 
 			} else {
+				model.addAttribute("customerobject",customer);
 				model.addAttribute("info", true);
 				model.addAttribute("message", "checkData");
 				System.out.println("Failure");
 			}
 			}
 		} catch (Exception e) {
+			model.addAttribute("customerobject",customer);
 			model.addAttribute("info", true);
 			model.addAttribute("message", "checkData");
 			System.out.println("Failure");
+		
 
 		}
 		model.addAttribute("registerpage", true);
-		model.addAttribute("customerobject", new Customer());
+		
 		model.addAttribute("title", "register");
 		return "index";
 	}
