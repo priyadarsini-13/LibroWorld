@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.niit.Libroworld.Model.Category;
+
 import com.niit.Libroworld.Model.Customer;
+import com.niit.Libroworld.Model.customerCred;
 @Repository("customerdao")
 @Transactional
 public class CustomerDAOImpl implements ICustomerDAO {
@@ -17,6 +18,12 @@ public class CustomerDAOImpl implements ICustomerDAO {
 	public boolean addCustomer(Customer customer) {
 		try {
 			sessionfactory.getCurrentSession().save(customer);
+			customerCred cred=new customerCred();
+			cred.setCust_Email(customer.getCust_Email());
+			cred.setCust_Password(customer.getCust_Password());
+			cred.setCust_status("false");
+			cred.setCust_Role("ROLE_CUSTOMER");
+			sessionfactory.getCurrentSession().save(cred);
 			return true;
 		} catch (Exception e) {
 			return false;
