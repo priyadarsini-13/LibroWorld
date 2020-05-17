@@ -17,7 +17,7 @@ public class Cart {
 	@ManyToOne
 	Product prodDetails;
 	@Column(nullable=false)
-	int Quantity;
+	int pro_Quantity;
 	public int getCart_Id() {
 		return cart_Id;
 	}
@@ -36,12 +36,15 @@ public class Cart {
 	public void setProdDetails(Product prodDetails) {
 		this.prodDetails = prodDetails;
 	}
-	public int getQuantity() {
-		return Quantity;
+	public int getPro_Quantity() {
+		return pro_Quantity;
 	}
-	public void setQuantity(int quantity) {
-		Quantity = quantity;
+	public void setPro_Quantity(int pro_Quantity) {
+		this.pro_Quantity = pro_Quantity;
 	}
 	
+	
+	
+		
 
 }

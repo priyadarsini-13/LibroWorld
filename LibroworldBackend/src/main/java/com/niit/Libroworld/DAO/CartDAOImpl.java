@@ -60,7 +60,7 @@ public class CartDAOImpl implements ICartDAO {
 					.createCriteria(Cart.class).add(Restrictions.eq("custDetails", cust)).list();
 			return cartlist;
 		} catch (Exception e) {
-			return null;
+			return new ArrayList<Cart>();
 		}
 	}
 

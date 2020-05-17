@@ -2,9 +2,11 @@ com\niit\Libroworld\Config\DbConfig.class
 com\niit\Libroworld\DAO\CategoryDAOImpl.class
 com\niit\Libroworld\Model\Cart.class
 com\niit\Libroworld\DAO\IMyOrdersDAO.class
+META-INF\MANIFEST.MF
 com\niit\Libroworld\DAO\ICustomerDAO.class
 com\niit\Libroworld\Model\MyOrders.class
 com\niit\Libroworld\Model\Category.class
+META-INF\maven\com.niit\LibroworldBackend\pom.properties
 com\niit\Libroworld\DAO\ICategoryDAO.class
 com\niit\Libroworld\DAO\CartDAOImpl.class
 com\niit\Libroworld\Model\customerCred.class
@@ -12,6 +14,7 @@ com\niit\Libroworld\DAO\AddressDAOImpl.class
 com\niit\Libroworld\Model\Product.class
 com\niit\Libroworld\Model\Customer.class
 com\niit\Libroworld\DAO\ProductDAOImpl.class
+META-INF\maven\com.niit\LibroworldBackend\pom.xml
 com\niit\Libroworld\DAO\IAddressDAO.class
 com\niit\Libroworld\Model\Address.class
 com\niit\Libroworld\DAO\ICartDAO.class
