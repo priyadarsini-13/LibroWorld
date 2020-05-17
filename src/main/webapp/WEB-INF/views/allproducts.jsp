@@ -94,7 +94,7 @@ font-size:25px;
 
 							<div class="row"style=" margin-top:2%">
 								<div class="col-6">
-									<a href="" class="btn btn-success"> Add to cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+									<a href="${cr }/addtocart?productid=${p.pro_Id}" class="btn btn-success"> Add to cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 								</div>
 								<div class="col-6">
 									<a href="${cr }/oneproduct?prodid=${p.pro_Id}" class="btn btn-warning">View Details<i class="fa fa-info-circle" aria-hidden="true"></i></a>

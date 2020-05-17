@@ -68,6 +68,7 @@
 							href="${cr }/contactus">CONTACT US</a></li>
 						<li class="nav-item "><a class="nav-link"
 							href="${cr }/admin/category"> MANAGE CATEGORY </a></li>
+							
 						<li class="nav-item "><a class="nav-link"
 							href="${cr }/admin/product">MANAGE PRODUCT </a></li>
 						<li class="nav-item "><a class="nav-link"
@@ -83,8 +84,8 @@
 							href="${cr }/aboutus">ABOUT US</a></li>
 						<li class="nav-item "><a class="nav-link"
 							href="${cr }/contactus">CONTACT US</a></li>
-						<li class="nav-item"><a class="nav-link"
-							href="${cr }/register">SIGN UP</a></li>
+						<li class="nav-item "><a class="nav-link"
+							href="${cr }/allproducts"> PRODUCT </a></li> 
 						<li class="nav-item "><a class="nav-link"
 							href="logout">Welcome ${sessionScope.username} LOGOUT </a></li>
 					</c:when>

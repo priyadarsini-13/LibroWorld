@@ -207,7 +207,7 @@ transform
 			<c:if test="${product.stock != 0}">
 				<aside class="col-sm-3">
 					<div class="row" style="padding-top: 20%;">
-						<a href="addtocart?prodid=${product.pro_Id}"
+						<a href="addtocart?productid=${product.pro_Id}"
 							class="btn btn-lg color-box-waanbii" type="button"> <i
 							class="fa fa-shopping-cart"></i> Add to Cart
 						</a>

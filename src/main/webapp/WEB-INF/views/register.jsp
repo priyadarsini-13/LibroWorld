@@ -64,7 +64,7 @@ input[type=text] {
 		<div class="col-12" >
 
 			<h3 class="text-center">
-				Sign up now<i class="fa fa-user-circle  fa-lg" id=" user"></i>
+				Sign up now <i class="fa fa-user-circle  fa-lg" id=" user"></i>
 			</h3>
 			<CENTER>
 

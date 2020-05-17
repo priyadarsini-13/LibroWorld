@@ -136,7 +136,7 @@ table {
 	</div>
 	
 	
-	<div class="table-responsive table-bordered movie-table">
+	<div class="table table-bordered ">
 
 		<table >
 			<tr>
@@ -166,7 +166,7 @@ table {
 							</div>
 							<div class="col-6">
 								<a href="${cr }/admin/getproducttoedit?prodid=${c.pro_Id}"
-									class="btn btn-success">Edit</a>
+									class="btn btn-success" >Edit</a>
 							</div>
 						</div>
 					</td>

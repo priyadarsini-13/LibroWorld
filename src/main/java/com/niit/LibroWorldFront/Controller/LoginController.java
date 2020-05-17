@@ -1,5 +1,7 @@
 package com.niit.LibroWorldFront.Controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,12 +11,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.niit.Libroworld.DAO.ICartDAO;
 import com.niit.Libroworld.DAO.ICustomerDAO;
+import com.niit.Libroworld.Model.Cart;
 import com.niit.Libroworld.Model.Customer;
 @Controller
 public class LoginController {
 	@Autowired
 	ICustomerDAO customerdao;
+	@Autowired
+	ICartDAO cartdao;
 	@RequestMapping("/login")
 	String loginPage(@RequestParam(value="error",required=false,defaultValue="false") boolean error, Model model)
 	{
@@ -38,17 +44,30 @@ public class LoginController {
 		String role=SecurityContextHolder.getContext().getAuthentication().getAuthorities().toString();
 		if(role.equals("[ROLE_ADMIN]"))
 		{
+			Customer customer=customerdao.selectCustomer(userid);
 			session.setAttribute("username","ADMINISTRATOR");
 			session.setAttribute("adminrole",true);
+			session.setAttribute("userrole",true);
 		}
 		else
 		{
 			Customer customer=customerdao.selectCustomer(userid);
+			session.setAttribute("custdetails", customer);
 			session.setAttribute("username",customer.getCust_Name().toUpperCase());
 			session.setAttribute("adminrole", false);
 			session.setAttribute("userrole", true);
+			ArrayList<Cart> cartlist=cartdao.allcart(customer);
+			session.setAttribute("cartinfo", cartlist);
+			session.setAttribute("cartqty", cartlist.size());
+			if(session.getAttribute("prodid")!=null);{
+				int prodid=Integer.parseInt(session.getAttribute("prodid").toString());
+				int qty=Integer.parseInt(session.getAttribute("qty").toString());
+				return "redirect:/addtocart?productid="+prodid+"&quantity="+qty;
+			}
+		}
+		
+		return "index";
 	}
-		model.addAttribute("indexpage",true);
-		return"index";
 }
-}
+			
+

@@ -94,7 +94,7 @@ hr.new1 {
 	<div class="jumbotron">
 		<div class="col-12">
 			<h2 class="text-center">
-				Sign in<i class="fa fa-pencil fa-lg" id="pencil"></i>
+				Sign in <i class="fa fa-pencil fa-lg" id="pencil"></i>
 			</h2>
 			<div>
 			
@@ -115,7 +115,7 @@ hr.new1 {
 					</div>
 
 					<div class="custom-control custom-checkbox mb-3">
-						<input type="text" class="custom-control-input" id="customCheck1">
+						<input type="checkbox" class="custom-control-input" id="customCheck1">
 						<label class="custom-control-label" for="customCheck1">Remember
 							password</label>
 					</div>
