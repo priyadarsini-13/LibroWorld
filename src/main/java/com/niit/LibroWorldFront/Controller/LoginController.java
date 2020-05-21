@@ -59,7 +59,7 @@ public class LoginController {
 			ArrayList<Cart> cartlist=cartdao.allcart(customer);
 			session.setAttribute("cartinfo", cartlist);
 			session.setAttribute("cartqty", cartlist.size());
-			if(session.getAttribute("prodid")!=null);{
+			if(session.getAttribute("prodid")!=null){
 				int prodid=Integer.parseInt(session.getAttribute("prodid").toString());
 				int qty=Integer.parseInt(session.getAttribute("qty").toString());
 				return "redirect:/addtocart?productid="+prodid+"&quantity="+qty;

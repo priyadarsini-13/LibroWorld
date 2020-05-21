@@ -192,7 +192,21 @@ transform
 				<article class="card-body m-0 pt-0 pl-5">
 					<h3 class="title text-uppercase">${product.pro_Name}</h3>
 					<div class="mb-3 mt-3">
-						<span class="h7 text-success">In stock.</span>
+					<c:if test="${product.stock !=0}">
+										<p class="card-text">
+											Stock:<span class="mytext">  In Stock</span>
+										</p>
+									</c:if>
+									<c:if test="${product.stock == 0}">
+										<p class="card-text">
+											Stock:<span class="mytext">  out of Stock</span>
+										</p>
+									</c:if>
+									<c:if test="${product.stock < 5 }">
+										<p class="card-text">
+											Stock:<span class="mytext">  Only  ${product.stock}  Available</span>
+										</p>
+									</c:if>
 					</div>
 					<div class="mb-3 mt-3">
 						<span class="price-title">Price :</span> <span
@@ -206,15 +220,30 @@ transform
 			</aside>
 			<c:if test="${product.stock != 0}">
 				<aside class="col-sm-3">
-					<div class="row" style="padding-top: 20%;">
-						<a href="addtocart?productid=${product.pro_Id}"
+				<form action="${cr }/addtocart" method="post">
+                           <div class="row">
+                    <div class="col-3">
+                    <label> Quantity</label>
+                    </div>
+                    <div class="col-7">
+                    <div class="form-group">
+                                <input type="text"  id="quantity" name="quantity"  value="1">
+                                <input type="hidden" id="productid" name="productid" value="${product.pro_Id}">
+                                <input type="hidden" id="cartpage" name="cartpage" value="true">
+                                 
+                               </div>
+                               </div>
+                          <div class="form-group">
+						<a href="${cr }/addtocart?productid=${product.pro_Id}"
 							class="btn btn-lg color-box-waanbii" type="button"> <i
-							class="fa fa-shopping-cart"></i> Add to Cart
+							class="fa fa-cart-arrow-down"></i> Add to Cart
 						</a>
 					</div>
+					</div>
+					</form>
 				</aside>
 			</c:if>
-			
+		
 			<c:if test="${product.stock == 0}">
 				<aside class="col-sm-3">
 					<div class="row" style="padding-top: 20%;">

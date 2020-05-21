@@ -15,7 +15,7 @@
 .card {
 	margin-top: 10%;
 	height: 400px;
-	width:305px;
+	width:310px;
 	border:4px solid rgb(88, 17, 67);
 	margin-left:5%;
 	border-radius:1%;

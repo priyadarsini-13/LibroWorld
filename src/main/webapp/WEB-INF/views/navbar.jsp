@@ -86,6 +86,9 @@
 							href="${cr }/contactus">CONTACT US</a></li>
 						<li class="nav-item "><a class="nav-link"
 							href="${cr }/allproducts"> PRODUCT </a></li> 
+								<li class="nav-item "><a class="nav-link"
+							href="${cr }/user/viewcart"> <i
+						class="fa fa-shopping-cart ico5 "><sup>${cartqty}</sup></i></a></li>
 						<li class="nav-item "><a class="nav-link"
 							href="logout">Welcome ${sessionScope.username} LOGOUT </a></li>
 					</c:when>
@@ -100,6 +103,8 @@
 							href="${cr }/contactus">CONTACT US</a></li>
 						<li class="nav-item "><a class="nav-link"
 							href="${cr }/allproducts"> PRODUCT </a></li>
+						<li class="nav-item "><a class="nav-link"
+							href="${cr }/user/viewcart"> CART </a></li>
 						<li class="nav-item"><a class="nav-link" href="login">SIGN
 								IN</a></li>
 						<li class="nav-item"><a class="nav-link"
@@ -115,7 +120,7 @@
 
 		<div class="search-container">
 			<form>
-				<input type="text" placeholder=" Search" name="search">
+				<input type="text1" placeholder=" Search" name="search">
 				<button type="submit">
 					<i class="fa fa-search icon4 "></i>
 				</button>
@@ -131,6 +136,7 @@
 						class="fa fa-twitter ico5" aria-hidden="true"></i></a></li>
 				<li class="li9"><a href="#" target="blank"><i
 						class="fa fa-facebook ico5 " aria-hidden="true"></i></a></li>
+						
 
 			</ul>
 

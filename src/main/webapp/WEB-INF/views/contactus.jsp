@@ -28,21 +28,22 @@ background-image: url(img/bge2.jpg);
 	margin-top: 8%;
 	top: 0px;
 	z-index: -1;
-	width: 48%;
-	height: 82%;
+	width: 50%;
+	height: 88%;
 	color: rgb(95, 16, 82);
 	background-color: rgba(206, 193, 201, 0.5);
 	border-radius:1%;
+	
 }
 
 .container1 {
 	color: white;
 	position: relative;
-	width: 26%;
-	margin-left: 21%;
-	margin-top: 6%;
-	margin-bottom:5%;
-	height: 100%;
+	width: 28%;
+	margin-left: 23%;
+	margin-top: 5%;
+		margin-bottom: 5%;
+	height: 90%;
 	background-color: rgba(44, 56, 78, 0.863);
 }
 .form-control{
@@ -54,7 +55,7 @@ border-radius:0%;
  
  display: flex;
  width: 100%;
- margin-top: 5%;
+ margin-top: 2%;
 }
 .ico{
   padding: 10px;
@@ -172,7 +173,7 @@ border-radius:0%;
 							<div class="form-group"></div>
 						</div>
 						<div class="col-12">
-							<button class="btn4 btn btn-lg btn-primary  text-uppercase font-weight-bold mb-2"
+							<button class="btn4 btn btn-lg btn-primary  text-uppercase font-weight-bold mb-2" 
 								type="submit"> SEND</button>
 						</div>
 					</div>

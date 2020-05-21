@@ -2,6 +2,8 @@
     .footer
     {
         background:rgba(224, 0, 86, 0.829);
+       margin-bottom:0%;
+        
     }
      .myul
     {

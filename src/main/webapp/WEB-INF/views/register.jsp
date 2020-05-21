@@ -67,8 +67,9 @@ input[type=text] {
 				Sign up now <i class="fa fa-user-circle  fa-lg" id=" user"></i>
 			</h3>
 			<CENTER>
-
+	<h6>DISCOVER AND READ MORE!</h6>
 				<h6>Stay connected!</h6>
+			
 
 			</CENTER>
 			<div>
