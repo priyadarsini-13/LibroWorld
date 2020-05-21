@@ -7,23 +7,30 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+
 @Entity
 public class Address {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	int address_Id;
 	@Column(nullable = false)
+	
 	String name;
 	@Column(nullable=false)
+	
 	String line1;
 	@Column(nullable=false)
+	
 	String line2;
 	@Column(nullable=false)
+	
 	String area;
 	@ManyToOne
 	Customer customer;
 	@Column(nullable=false)
 	int pincode;
+	
 	public int getAddress_Id() {
 		return address_Id;
 	}

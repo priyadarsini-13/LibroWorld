@@ -50,9 +50,9 @@ public class AddressDAOImpl implements IAddressDAO {
 	@Override
 	public ArrayList<Address> allAddress(Customer cust) {
 		try {
-			ArrayList<Address> addlist = (ArrayList<Address>) sessionfactory.getCurrentSession()
+			ArrayList<Address> addresslist = (ArrayList<Address>) sessionfactory.getCurrentSession()
 					.createCriteria(Address.class).add(Restrictions.eq("customer", cust)).list();
-			return addlist;
+			return addresslist;
 		} catch (Exception e) {
 			return null;
 		}

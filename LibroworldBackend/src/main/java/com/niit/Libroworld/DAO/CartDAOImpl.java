@@ -68,7 +68,7 @@ public class CartDAOImpl implements ICartDAO {
 	public Cart oneCart(int cart_id) {
 		try {
 			Cart cart = (Cart) sessionfactory.getCurrentSession().createCriteria(Cart.class)
-					.add(Restrictions.eq(" cart_Id", cart_id)).uniqueResult();
+					.add(Restrictions.eq("cart_Id", cart_id)).uniqueResult();
 			return cart;
 		} catch (Exception e) {
 			return null;

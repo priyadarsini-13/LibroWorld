@@ -11,4 +11,5 @@ public interface ICartDAO {
  public boolean deleteCart(Cart cart);
 	public ArrayList <Cart> allcart(Customer cust);
 	public Cart oneCart(int cartid);
+	
 }
