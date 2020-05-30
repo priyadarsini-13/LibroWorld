@@ -61,11 +61,11 @@ public class MyOrdersDAOImpl implements IMyOrdersDAO {
 	}
 
 	@Override
-	public MyOrders oneMyOrder(String order_id) {
+	public  ArrayList<MyOrders> oneMyOrder(String order_id) {
 		try {
-			MyOrders myorders = (MyOrders) sessionfactory.getCurrentSession().createCriteria(MyOrders.class)
-					.add(Restrictions.eq("order_Id", order_id)).uniqueResult();
-			return myorders;
+			ArrayList<MyOrders> order = 	(ArrayList<MyOrders>)sessionfactory.getCurrentSession().createCriteria(MyOrders.class)
+				.add(Restrictions.eq("order_Id", order_id)).list();
+			return order;
 		} catch (Exception e) {
 			return null;
 		}
