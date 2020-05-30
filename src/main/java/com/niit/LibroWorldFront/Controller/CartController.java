@@ -114,9 +114,22 @@ public class CartController {
 
 	@RequestMapping("/user/viewcart")
 	String viewcart(HttpSession session, Model m) {
+		if(session.getAttribute("cartinfo")==null) {
+			
+		
 		Customer cust = (Customer) session.getAttribute("custdetails");
+		float total=0;
+		ArrayList<Cart> cartlist=cartdao.allcart(cust);
+		Iterator<Cart> cartIterator=cartlist.iterator();
+		while(cartIterator.hasNext())
+		{
+			Cart cart=(Cart)  cartIterator.next();
+			total=total+(cart.getPro_Quantity()*cart.getProdDetails().getPrice());
+		}
+		session.setAttribute("total",total);
 		session.setAttribute("cartinfo", cartdao.allcart(cust));
 		session.setAttribute("cartqty", cartdao.allcart(cust).size());
+		}
 		m.addAttribute("cartpage", true);
 		return "index";
 	}
@@ -126,6 +139,7 @@ public class CartController {
 	String deleteCart(@RequestParam("cartid") int cartid, HttpSession session) {
 		Customer customer = (Customer) session.getAttribute("custdetails");
 		cartdao.deleteCart(cartdao.oneCart(cartid));
+		session.setAttribute("cartinfo", cartdao.allcart(customer));
 		return "redirect:/user/viewcart";
 	}
 }

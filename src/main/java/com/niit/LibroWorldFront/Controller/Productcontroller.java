@@ -85,7 +85,7 @@ public class Productcontroller {
 	}
 
 	private void addImage(int pro_Id, MultipartFile product_Images) {
-		String path = "D:\\LibroWorldFront\\src\\main\\webapp\\resources\\productimages\\";
+		String path = "D:\\Education Content-1\\pd\\LibroWorldFront\\src\\main\\webapp\\resources\\productimages\\";
 		try {
 			if (product_Images.getSize() != 0) {
 				path = path + String.valueOf(pro_Id) + ".jpeg";
@@ -113,7 +113,7 @@ public class Productcontroller {
 
 			if (productdao.deleteProduct(product)) {
 
-				String path = "D:\\LibroWorldFront\\src\\main\\webapp\\resources\\productimages\\";
+				String path = "D:\\Education Content-1\\pd\\LibroWorldFront\\src\\main\\webapp\\resources\\productimages\\";
 				path = path + String.valueOf(prodid) + ".jpeg";
 				File f = new File(path);
 				if (f.exists()) {

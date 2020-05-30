@@ -1,6 +1,7 @@
 package com.niit.LibroWorldFront.Controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.servlet.http.HttpSession;
 
@@ -56,7 +57,15 @@ public class LoginController {
 			session.setAttribute("username",customer.getCust_Name().toUpperCase());
 			session.setAttribute("adminrole", false);
 			session.setAttribute("userrole", true);
+			float total=0;
 			ArrayList<Cart> cartlist=cartdao.allcart(customer);
+			Iterator<Cart> cartIterator=cartlist.iterator();
+			while(cartIterator.hasNext())
+			{
+				Cart cart=(Cart)  cartIterator.next();
+				total=total+(cart.getPro_Quantity()*cart.getProdDetails().getPrice());
+			}
+			session.setAttribute("total",total);
 			session.setAttribute("cartinfo", cartlist);
 			session.setAttribute("cartqty", cartlist.size());
 			if(session.getAttribute("prodid")!=null){
@@ -65,7 +74,7 @@ public class LoginController {
 				return "redirect:/addtocart?productid="+prodid+"&quantity="+qty;
 			}
 		}
-		
+		model.addAttribute("indexpage", true);
 		return "index";
 	}
 }

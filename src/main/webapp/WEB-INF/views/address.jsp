@@ -116,7 +116,7 @@ color:  rgb(88, 17, 67);
 							</div>
 							<div class="row" style="margin-top: 2%">
 
-								<a href="" class="btn btn-info" style="width: 100%"> <i
+								<a href="${cr2}/user/placeorder?addressid=${p.address_Id}" class="btn btn-info" style="width: 100%"> <i
 									class="fa fa-truck"></i>Ship Here
 								</a>
 
