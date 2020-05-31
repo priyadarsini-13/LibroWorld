@@ -52,7 +52,6 @@ font-size:25px;
 	<c:if test="${not empty cartinfo}">
 
 	
-		
 
 				<table class="table ">
 					<thead class="thead-dark">
@@ -63,13 +62,15 @@ font-size:25px;
 							<th scope="col">Quantity</th>
 							
 							<th scope="col">Subtotal</th>
+						
 						</tr>
 					</thead>
 					<tbody>
 					<c:set var="Total" value="0"/>
+					
 				<c:forEach items="${cartinfo}" var="p">
 				<c:set var="subtotal" value="${p.pro_Quantity*p.prodDetails.price}"></c:set>
-				<c:set var="total" value="${total+subtotal }"/>
+				<c:set var="Total" value="${Total+subtotal }"/>
 						
 							<tr>
 
@@ -83,7 +84,7 @@ font-size:25px;
 												class="btn btn btn-danger "> Remove<i class="fa fa-trash-o"></i>
 											</a>
 										</div>
-											<c:if test="${error && prodid==p.prodDetails.pro_Id}">
+											<c:if test="${error && prodid == p.prodDetails.pro_Id}">
 									<div class="alert alert-warning">
 				                    <strong>${message}</strong>
 			                        </div>
@@ -105,8 +106,8 @@ font-size:25px;
                            </form>       
 								</td>
 								
-								<td  data-th="Total" class="text-center" colspan="1"><label>${p.prodDetails.price*p.pro_Quantity}</label></td>
-							
+								<td  data-th="Total" class="text-center" colspan="1"><label>${subtotal}</label></td>
+							<td>
   
 						</c:forEach>
 
@@ -118,7 +119,7 @@ font-size:25px;
 					<td>Subtotal</td>
 					<td />
 					<td />
-					<td data-th="Total" class="text-center" colspan="1">${total }</td>
+					<td data-th="Total" class="text-center" colspan="1">${Total}</td>
 					
 					</tr>
 					<tr>
@@ -126,11 +127,11 @@ font-size:25px;
 					<td />
 					<td />
 					<td data-th="Total" class="text-center" colspan="1">
-					<c:if test="${total>1000 }">
+					<c:if test="${Total>1000 }">
 					<c:set var="shipping" value="0"></c:set>
 					Free
 					</c:if>
-					<c:if test="${total<=1000 }">
+					<c:if test="${Total<=1000 }">
 					<c:set var="shipping" value="100"></c:set>
 					${shipping}
 				
@@ -143,7 +144,7 @@ font-size:25px;
 					<td>Total</td>
 					<td />
 					<td />
-					<td data-th="Total" class="text-center" colspan="1">${total+shipping}</td>
+					<td data-th="Total" class="text-center" colspan="1">${Total+shipping}</td>
 					
 					</tr>
 
@@ -164,8 +165,6 @@ font-size:25px;
 		</table>
 </c:if>
 </div>
-
-
 
 </body>
 

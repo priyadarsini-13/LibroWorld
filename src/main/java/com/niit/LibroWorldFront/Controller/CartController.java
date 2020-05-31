@@ -62,12 +62,15 @@ public class CartController {
 					Cart item1 = (Cart) cartitem.next();
 					if (item1.getProdDetails().getPro_Id() == prodid) {
 						if (cartpage) {
-							if (qty > product.getStock()) {
+							if (qty > product.getStock()) 
+							{
 
 								model.addAttribute("error", true);
 								model.addAttribute("message", "Stock Insufficient");
 								model.addAttribute("prodid", product.getPro_Id());
-							} else {
+							} 
+							else 
+							{
 								item1.setPro_Quantity(qty);
 								cartdao.updateCart(item1);
 							}
@@ -101,12 +104,28 @@ public class CartController {
 					cartdao.addCart(item);
 				}
 			}
-			float total = 0;
+			
 			cartlist = cartdao.allcart(customer);
 			session.setAttribute("cartinfo", cartlist);
 			session.setAttribute("cartqty", cartlist.size());
+			
+			float total=0;
+			ArrayList<Cart> cartlist1=cartdao.allcart(customer);
+			Iterator<Cart> cartIterator=cartlist1.iterator();
+			while(cartIterator.hasNext())
+			{
+				Cart cart=(Cart)  cartIterator.next();
+				total=total+(cart.getPro_Quantity()*cart.getProdDetails().getPrice());
+			}
+			System.out.println(total);
+			session.setAttribute("total",total);
+			session.setAttribute("cartinfo", cartdao.allcart(customer));
+			session.setAttribute("cartqty", cartdao.allcart(customer).size());
+			
 			model.addAttribute("cartpage", true);
+			
 
+			
 		}
 
 		return "index";
@@ -114,9 +133,7 @@ public class CartController {
 
 	@RequestMapping("/user/viewcart")
 	String viewcart(HttpSession session, Model m) {
-		if(session.getAttribute("cartinfo")==null) {
-			
-		
+	
 		Customer cust = (Customer) session.getAttribute("custdetails");
 		float total=0;
 		ArrayList<Cart> cartlist=cartdao.allcart(cust);
@@ -126,10 +143,11 @@ public class CartController {
 			Cart cart=(Cart)  cartIterator.next();
 			total=total+(cart.getPro_Quantity()*cart.getProdDetails().getPrice());
 		}
+		System.out.println(total);
 		session.setAttribute("total",total);
 		session.setAttribute("cartinfo", cartdao.allcart(cust));
 		session.setAttribute("cartqty", cartdao.allcart(cust).size());
-		}
+		
 		m.addAttribute("cartpage", true);
 		return "index";
 	}

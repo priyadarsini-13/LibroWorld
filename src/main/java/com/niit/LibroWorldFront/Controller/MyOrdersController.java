@@ -45,6 +45,8 @@ public class MyOrdersController {
 		MyOrders myorders = new MyOrders();
 		ArrayList<Cart> cartlist = (ArrayList<Cart>) session.getAttribute("cartinfo");
 		Address address = addressdao.oneAddress(addressid);
+		float total = Float.parseFloat(session.getAttribute("total").toString());
+		System.out.println(total);
 		Customer customer = (Customer) session.getAttribute("custdetails");
 		String orderid = "OD" + UUID.randomUUID().getMostSignificantBits();
 		Iterator<Cart> cartIterator = cartlist.iterator();
@@ -56,7 +58,7 @@ public class MyOrdersController {
 			myorders.setProd_Details(cart.getProdDetails());
 			myorders.setProdqty(cart.getPro_Quantity());
 			myorders.setOrder_date(new Date());
-			myorders.setTotal(Float.parseFloat(session.getAttribute("total").toString()));
+			myorders.setOrder_total(total);
 			Product product = cart.getProdDetails();
 			if(product.getStock()>cart.getPro_Quantity() && myordersdao.addMyOrder(myorders))
 			{
@@ -75,6 +77,8 @@ public class MyOrdersController {
 	String viewOrders(HttpSession session, Model model) {
 		Customer cust = (Customer) session.getAttribute("custdetails");
 		ArrayList<MyOrders> orders = myordersdao.allMyOrder(cust);
+		session.setAttribute("cartinfo", cartdao.allcart(cust));
+		session.setAttribute("cartqty", cartdao.allcart(cust).size());
 		model.addAttribute("orderlist", orders);
 		model.addAttribute("orderpage", true);
 		return "index";

@@ -60,9 +60,8 @@ color:rgb(19, 3, 15);
 			</thead>
 			<tbody>
 				<c:set var="Total" value="0" />
-				<c:forEach items="${cartinfo}" var="p">  
-					<c:set var="subtotal"
-						value="${p.pro_Quantity*p.prodDetails.price}"></c:set>
+				<c:forEach items="${orderlist}" var="o"> 
+					
 
 
 					<tr>
@@ -70,11 +69,11 @@ color:rgb(19, 3, 15);
 						<td data-th="Product">
 							<div class="row">
 								<div class="col-3">
-									<img src="${cr }/pimg/${p.prodDetails.pro_Id}.jpeg" alt="..."
+									<img src="${cr }/pimg/${o.prod_Details.pro_Id}.jpeg" alt="..."
 										width="100%" />
 								</div>
 								<div class="col-5">
-									<h3  style="margin-top:90px;">${p.prodDetails.pro_Name}</h3>
+									<h3  style="margin-top:90px;">${o.prod_Details.pro_Name}</h3>
 							
 									
 								</div>
@@ -82,19 +81,19 @@ color:rgb(19, 3, 15);
 						</td>
 						<td data-th="Price">
 						<h4 style="margin-top:90px;">
-									 <span > ${p.prodDetails.price}</span>
+									 <span > ${o.prod_Details.price}</span>
 								</h4>
 						</td>
 						<td data-th="Quantity">
 							
 								<h4 style="margin-top:90px;" >
-									 <span > ${p.pro_Quantity}</span>
+									 <span > ${o.prodqty}</span>
 								</h4>
 							
 						</td>
 						<td data-th="Total" class="text-center">
 						<h4 style="margin-top:90px;">
-									 <span > ${p.prodDetails.price}</span>
+									 <span > ${o.prod_Details.price}</span>
 								</h4>
 						</td>
 					</tr>
@@ -104,24 +103,25 @@ color:rgb(19, 3, 15);
 			
 
 			</tbody>
+			<c:forEach items="${orderlist}" begin="0" end="0" var="o">
 			<tfoot>
 				<tr>
 					
 					<td class="text-uppercase">Subtotal</td>
 					<td />
 					<td />
-					<td data-th="Total" class="text-center" colspan="1">${subtotal}</td>
+					<td data-th="Total" class="text-center" colspan="1">${o.order_total}</td>
 
 				</tr>
 				<tr>
 					<td class="text-uppercase">Shipping</td>
 					<td />
 					<td />
-					<td data-th="Total" class="text-center" colspan="1"><c:if test="${total>1000 }">
+					<td data-th="Total" class="text-center" colspan="1"><c:if test="${o.order_total>1000}">
 					<c:set var="shipping" value="0"></c:set>
 					Free
 					</c:if>
-					<c:if test="${total<=1000 }">
+					<c:if test="${o.order_total<=1000 }">
 					<c:set var="shipping" value="100"></c:set>
 					${shipping}
 				
@@ -132,7 +132,7 @@ color:rgb(19, 3, 15);
 					<td class="text-uppercase">Total</td>
 					<td />
 					<td />
-					<td data-th="Total" class="text-center" colspan="1">${subtotal+shipping}</td>
+					<td data-th="Total" class="text-center" colspan="1">${o.order_total + shipping}</td>
 
 				</tr>
 
@@ -152,6 +152,7 @@ color:rgb(19, 3, 15);
 					</td>
 				</tr>
 			</tfoot>
+			</c:forEach>
 		</table>
 	
 </div>
