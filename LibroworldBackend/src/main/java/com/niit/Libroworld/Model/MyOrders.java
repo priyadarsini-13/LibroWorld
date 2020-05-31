@@ -33,7 +33,7 @@ public class MyOrders {
 	Address address;
 	
 	@Column(nullable = false)
-	float total;
+	float order_total;
 	
 	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
@@ -87,12 +87,12 @@ public class MyOrders {
 		this.address = address;
 	}
 
-	public float getTotal() {
-		return total;
+	public float getOrder_total() {
+		return order_total;
 	}
 
-	public void setTotal(float total) {
-		this.total = total;
+	public void setOrder_total(float order_total) {
+		this.order_total = order_total;
 	}
 
 	public Date getOrder_date() {
@@ -102,6 +102,7 @@ public class MyOrders {
 	public void setOrder_date(Date order_date) {
 		this.order_date = order_date;
 	}
+
 	
 	
 }
