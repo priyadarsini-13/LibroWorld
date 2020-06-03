@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
 import org.hibernate.validator.constraints.Length;
-
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
@@ -18,18 +18,21 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	int pro_Id;
+	
 	@Column(nullable = false, unique = true)
-	@Length(min=3,message ="The minimum no.of character is 3")
+	@NotBlank(message ="**ProductName Cannot be blank**")
+	@Length(min=3,message ="**The minimum no.of character is 3**")
 	String pro_Name;
+	
 	@Column(nullable = false,columnDefinition="text")
-
 	String description;
-	@Column(nullable = false)
 	
+	@Column(nullable = false)
 	int stock;
-	@Column(nullable = false)
 	
+	@Column(nullable = false)
 	float price;
+	
 	@ManyToOne
 	Category pro_Category;
 	@Transient

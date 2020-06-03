@@ -16,8 +16,8 @@ public class Category {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	int cat_Id;
 	@Column(nullable = false, unique = true)
-	@NotBlank(message ="Category Name Cannot be blank")
-	@Length(min=3,message ="The minimum no.of character is 3")
+	@NotBlank(message ="**Category Name Cannot be blank**")
+	@Length(min=3,message ="**The minimum no.of character is 3**")
 	String cat_Name;
 	
 	public int getCat_Id() {
