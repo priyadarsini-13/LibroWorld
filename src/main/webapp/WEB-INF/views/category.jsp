@@ -74,8 +74,9 @@ table {
 					<label for="inputEmail"></label>
 					<form:input type="text" id="inputEmail" class="form-control"
 						placeholder="category " path="cat_Name" />
-					<form:errors path="cat_Name" cssStyle="color:Red"></form:errors>
+					
 				</div>
+				<form:errors path="cat_Name" cssStyle="color:Red"></form:errors>
 				<button
 					class="btn1 btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
 					type="submit">Submit</button>

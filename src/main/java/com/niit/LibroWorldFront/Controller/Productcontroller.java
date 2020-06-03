@@ -56,9 +56,9 @@ public class Productcontroller {
 				if (productdao.addProduct(product)) {
 					addImage(product.getPro_Id(), product.getProduct_Images());
 					model.addAttribute("info", true);
-					model.addAttribute("message", "Added");
+					model.addAttribute("message", "ProductAdded");
 					System.out.println("Done");
-					model.addAttribute("productobject", product);
+					model.addAttribute("productobject", new Product());
 
 				} else {
 					model.addAttribute("info", true);
@@ -76,10 +76,9 @@ public class Productcontroller {
 		}
 		model.addAttribute("edit", false);
 		model.addAttribute("productpage", true);
-		model.addAttribute("productobject", new Product());
 		model.addAttribute("title", "product");
 		model.addAttribute("catlist", categorydao.allCategory());
-
+		model.addAttribute("productlist", productdao.allProduct());
 		return "index";
 
 	}
@@ -160,7 +159,6 @@ public class Productcontroller {
 			if (br.hasErrors()) {
 				model.addAttribute("edit", true);
 				model.addAttribute("productobject", product);
-
 				model.addAttribute("info", true);
 				model.addAttribute("message", "Please Enter Data In correct Format");
 

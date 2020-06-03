@@ -33,7 +33,7 @@ input[type=text] {
 
 .form-label-group {
 	display: flex;
-	margin-top: 10%;
+	margin-top: 5%;
 }
 
 .icon9 {
@@ -55,7 +55,7 @@ input[type=text] {
 
 <c:if test="${info}">
 				<div class ="alert" role="alert">
-				<h3>${message}</h3>
+				<h3 style="color:  rgb(88, 17, 67)">${message}</h3>
 				</div>
 			</c:if>
 	<div class="jumbotron">
@@ -80,27 +80,30 @@ input[type=text] {
 						<i class="fa fa-user icon9"></i> <label for="inputName"></label> 
 						<form:input type="text" id="inputName" class="form-control"
 							placeholder="Name" path="cust_Name"/>
-							<form:errors path="cust_Name" cssStyle="color:Red"></form:errors>
+							
 					</div>
+					<form:errors path="cust_Name" cssStyle="color:blue"></form:errors>
 					<div class="form-label-group">
 						<i class="fa fa-envelope icon9"></i> <label for="inputEmail"></label>
 						<form:input type="text" id="inputEmail" class="form-control"
 							placeholder="Email Address" path="cust_Email"/>
-							<form:errors path="cust_Email" cssStyle="color:Red"></form:errors>
+							
 					</div>
+					<form:errors path="cust_Email" cssStyle="color:blue"></form:errors>
 					<div class="form-label-group">
 						<i class="fa fa-phone-square icon9"></i> <label for="inputPhno"></label>
 						<form:input type="text" id="inputPhno" class="form-control"
 							placeholder="Phone Number" path="cust_Phno"/>
-							<form:errors path="cust_Phno" cssStyle="color:Red"></form:errors>
+							
 					</div>
+					<form:errors path="cust_Phno" cssStyle="color:blue"></form:errors>
 					<div class="form-label-group">
 						<i class="fa fa-key icon9"></i> <label for="inputPassword"></label> 
 						<form:input type="text" id="inputPassword" class="form-control"
 							placeholder="Password" path="cust_Password"/>
-							<form:errors path="cust_Password" cssStyle="color:Red"></form:errors>
+							
 					</div>   
-					
+					<form:errors path="cust_Password" cssStyle="color:blue"></form:errors>
 
                      
 					<div class="text-center">

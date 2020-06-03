@@ -70,7 +70,13 @@ color:  rgb(88, 17, 67);
 
 	</c:if>
 	<c:if test="${not empty (addresslist) }">
+	<c:if test="${info}">
+	<div class="alert" role="alert">
+		<h3>${message}</h3>
+	</div>
+</c:if>
 		<div class="row">
+		
 			<c:forEach items="${addresslist}" var="p">
 				<div class="col-3">
 					<div class="card">

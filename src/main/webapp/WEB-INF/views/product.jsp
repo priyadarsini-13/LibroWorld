@@ -62,21 +62,20 @@ table {
 
 	
 	<c:if test="${info}">
-		<div class="alert">
-		${message}
-		</div>
-	</c:if>
+	<div class="alert" role="alert">
+		<h3>${message}</h3>
+	</div>
+</c:if>
+
 	
 
 	<div class="jumbotron">
 		<div class="col-12" style="margin-top: 1%">
-			<center>
-				<h2>ProductDetails</h2>
-			</center>
+			<h2 class=text-center>ProductDetails</h2>
 
 			<div>
 				<hr class="new1">
-<c:if test="${edit}">
+           <c:if test="${edit}">
 				<c:set var="url" value="${cr }/admin/updateproduct"></c:set>
 			</c:if>
 			<c:if test="${!edit}">
@@ -92,10 +91,10 @@ table {
 
 					<div class="form-label-group">
 						<label for="inputname"></label>
-						<form:input type="text" id="pro_name" class="form-control"
+						<form:input type="text" id="proname" class="form-control"
 							placeholder="ProductName" path="pro_Name" />
-						<form:errors path="pro_Name" cssStyle="color:Red"></form:errors>
 					</div>
+					<form:errors path="pro_Name" cssStyle="color:Red"></form:errors>
 					<div class="form-label-group">
 						<label for="description"></label>
 						<form:textarea class="form-control" placeholder="Descripton"
@@ -159,15 +158,15 @@ table {
 					<td>${c.pro_Category.cat_Name}</td>
 					<td><img src="${cr }/pimg/${c.pro_Id}.jpeg" height="50px"></td>
 					<td>
-						<div class="row">
-							<div class="col-6">
+						<div class="row" style="margin-left:5%;margin-top:2%">
+							
 								<a href="${cr }/admin/deleteproduct?prodid=${c.pro_Id}"
 									class="btn btn-danger">Delete</a>
-							</div>
-							<div class="col-6">
+							
+							
 								<a href="${cr }/admin/getproducttoedit?prodid=${c.pro_Id}"
-									class="btn btn-success" >Edit</a>
-							</div>
+									class="btn btn-success" style="margin-top:5%" > Edit </a>
+							
 						</div>
 					</td>
 				</tr>

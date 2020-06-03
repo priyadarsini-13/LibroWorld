@@ -61,9 +61,6 @@ color:rgb(19, 3, 15);
 			<tbody>
 				<c:set var="Total" value="0" />
 				<c:forEach items="${orderlist}" var="o"> 
-					
-
-
 					<tr>
 
 						<td data-th="Product">

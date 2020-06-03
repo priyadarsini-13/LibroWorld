@@ -103,7 +103,7 @@ public class AddressController {
 		catch (Exception e)
 		{
 			model.addAttribute("info",true);
-			model.addAttribute("message","Data Deleted");
+			model.addAttribute("message","Data  Not Deleted");
 			System.out.println("catch");
 		}
 		
