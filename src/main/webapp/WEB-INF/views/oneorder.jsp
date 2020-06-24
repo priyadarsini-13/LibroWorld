@@ -142,9 +142,10 @@ color:rgb(19, 3, 15);
 					<td />
 
 
-					<td><a href=""
-						class="btn btn-success btn-block">Buy Now <i
-							class="fa fa-angle-right"></i>
+					<td><a href="${cr}/user/viewallorders"
+						class="btn btn-success btn-block"><i
+							class="fa fa-angle-left"></i> GO TO ORDERS 
+							
 					</a>
 					</td>
 				</tr>
